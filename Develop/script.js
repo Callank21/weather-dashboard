@@ -1,4 +1,8 @@
 var fiveDayForecast = document.getElementById("five-content");
+var submit = document.getElementById("button");
+var query = document.getElementById("query");
+var history = document.getElementById("history");
+var clear = document.getElementById("clear");
 
 function setFiveDay() {
     var future = document.createElement("div");
@@ -38,8 +42,73 @@ function setFiveDay() {
     pHumid.textContent = "Humidity: ";
     humidDiv.appendChild(humid);
 }
-setFiveDay();
-setFiveDay();
-setFiveDay();
-setFiveDay();
-setFiveDay();
+var histlist = [];
+console.log(histlist.length);
+function deleteHistory() {
+    var history = document.getElementById("history");
+    for (var i = history.getElementsByTagName('*').length; i > 0; i--) {
+        console.log(history.getElementsByTagName('*').length);
+        history.removeChild(history.firstChild);
+        console.log("hi");
+    }
+}
+function setHistory(query) {
+    deleteHistory();
+    var history = document.getElementById("history");
+    console.log(histlist.length);
+    if (histlist.length == 0) {
+        var location = document.createElement("button");
+        histlist.push(query);
+        console.log(histlist.length);
+        storingLocal();
+        history.appendChild(location);
+        location.textContent = histlist[0];
+    }
+    else if (histlist.length < 10){
+        histlist.splice(0,0,query);
+        console.log(histlist.length);
+        storingLocal();
+        for (var i = 0; i < histlist.length; i++) {
+            var location = document.createElement("button");
+            history.appendChild(location);
+            location.textContent = histlist[i];
+        }
+    }
+    else if (histlist.length >= 10) {
+        histlist.length = 9;
+        histlist.splice(0,0,query);
+        for (var i = 0; i < histlist.length; i++) {
+            var location = document.createElement("button");
+            history.appendChild(location);
+            location.textContent = histlist[i];
+        }
+    }
+}
+
+function storingLocal() {
+    localStorage.setItem("names", JSON.stringify(histlist));
+}
+
+function writeHistory() {
+    var storedNames = JSON.parse(localStorage.getItem("names"));
+    for (var i = 0; i < storedNames.length; i++) {
+        setHistory(storedNames[i]);
+    }
+}
+function destroyHistory() {
+    window.localStorage.clear();
+}
+
+submit.addEventListener("click", function(){
+ if (query.value) {
+     setHistory(query.value);
+ }
+});
+document.getElementById("history").addEventListener("click", function(event){
+    setHistory(event.target.textContent);
+});
+clear.addEventListener("click", function() {
+    destroyHistory();
+})
+
+writeHistory();
