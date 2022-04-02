@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Develop/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div id="screen-banner">
+            <div class="banner">
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
+        <div id="search">
+            <div class="searchbar">
+                <h2>Search for a City:</h2>
+                <input type="string" id="query" placeholder="Input a city"> <br>
+                <button id="button">submit</button>
+            </div>
+            <div id="history">
+                <button>Austin, Texas</button>
+            </div>
+        </div>
+        <div id="today">
+            <div class="today">
+                <div id="title"><h2 id="city">Austin</h2><h2 id="date">(3/30/2021)</h2><img></div>
+                <div id="title"><p>Temp:</p><p id="temp"></p></div>
+                <div id="title"><p>Wind:</p><p id="wind"></p></div>
+                <div id="title"><p>Humidity:</p><p id="humid"></p></div>
+                <div id="title"><p>UV Index:</p><p id="uv"></p></div>
+            </div>
+        </div>
+        <div id="five-day">
+            <h2>5-Day Forecast:</h2>
+            <div id="five-content">
+                <div id="future">
+                    <div><h3 id="date">03/31/2021</h3></div>
+                    <img>
+                    <div id="title"><p>Temp:</p><p id="temp"></p></div>
+                    <div id="title"><p>Wind:</p><p id="wind"></p></div>
+                    <div id="title"><p>Humidity:</p><p id="humid"></p></div>
+                </div>
+                <div id="future">
+                    <div><h3 id="date">03/31/2021</h3></div>
+                    <img>
+                    <div id="title"><p>Temp:</p><p id="temp"></p></div>
+                    <div id="title"><p>Wind:</p><p id="wind"></p></div>
+                    <div id="title"><p>Humidity:</p><p id="humid"></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
