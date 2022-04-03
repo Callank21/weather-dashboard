@@ -117,6 +117,8 @@ function writeHistory() { //when the page is reloaded, it writes the content of 
 
 function destroyHistory() { // eliminates the list from local storage and resets the history
     window.localStorage.clear();
+    deleteHistory();
+    histlist = [];
 }
 
 function searchQuery(query) { //makes a call to the open weather api with the search query
