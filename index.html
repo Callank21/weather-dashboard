@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Develop/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div id="screen-banner">
+            <div class="banner">
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
+        <div id="search">
+            <div class="searchbar">
+                <h2>Search for a City:</h2>
+                <input type="string" id="query" placeholder="Input a city"> <br>
+                <button id="button">submit</button>
+                <button id="clear">clear</button>
+            </div>
+            <div id="history">
+            </div>
+        </div>
+        <div id="today">
+            <div class="today">
+                <div id="title"><h2 id="city"></h2><h2 id="cdate"></h2><h2 id="time"></h2><img></div>
+                <div id="title"><p>Temp:</p><p id="ctemp"></p></div>
+                <div id="title"><p>Wind:</p><p id="cwind"></p></div>
+                <div id="title"><p>Humidity:</p><p id="chumid"></p></div>
+                <div id="title"><p>UV Index:</p><p id="cuv"></p></div>
+            </div>
+        </div>
+        <div id="five-day">
+            <h2>5-Day Forecast:</h2>
+            <div id="five-content"></div>
+        </div>
+    </div>
+    <script src="./Develop/script.js"></script>
+</body>
+</html>
