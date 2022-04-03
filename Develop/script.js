@@ -64,10 +64,6 @@ function deleteHistory() { // clears the history buttons when a new result is in
         console.log(history.getElementsByTagName('*').length);
         history.removeChild(history.firstChild);
     }
-<<<<<<< HEAD
-    histlist = [];
-=======
->>>>>>> develop
 }
 
 function setHistory(query) { // sets up and writes the queries from the search bar to a list that then is written as the descending list of old search queries
@@ -122,11 +118,7 @@ function writeHistory() { //when the page is reloaded, it writes the content of 
 function destroyHistory() { // eliminates the list from local storage and resets the history
     window.localStorage.clear();
     deleteHistory();
-<<<<<<< HEAD
-    
-=======
     histlist = [];
->>>>>>> develop
 }
 
 function searchQuery(query) { //makes a call to the open weather api with the search query
