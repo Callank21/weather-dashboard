@@ -122,7 +122,7 @@ function destroyHistory() { // eliminates the list from local storage and resets
 }
 
 function searchQuery(query) { //makes a call to the open weather api with the search query
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=23551cfb9a93dcdae75a00d025e1f9f8`) // this is to get the longitude latitude from the search result
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=23551cfb9a93dcdae75a00d025e1f9f8`) // this is to get the longitude latitude from the search result
         .then(function (response) {
             response.json()
                 .then(function (response) { // this takes the lat lon and gets back the temp, wind speed, humidity, and uvi
